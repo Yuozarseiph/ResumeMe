@@ -1,0 +1,490 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Arial", sans-serif;
+    overflow-x: hidden;
+    background-color: #F4F4F9;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Fullpage Section Styles */
+.fullpage-section {
+    height: 100vh; /* Full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    transition: background 0.5s ease-out; /* Smooth background transition */
+}
+
+/* Section Animations (with will-change optimized) */
+#home {
+    background: linear-gradient(135deg, #4C9EEB, #81C784);
+    animation: waveHome 10s infinite linear;
+    background-size: 200% 200%;
+}
+
+@keyframes waveHome {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+#about {
+    background: linear-gradient(135deg, #FF6F91, #4C9EEB);
+    animation: waveAbout 10s infinite linear;
+    background-size: 200% 200%;
+}
+/* Section 1 (Home) */
+#home {
+    background: linear-gradient(135deg, #4C9EEB, #81C784); /* Light Blue to Mint Green gradient */
+    animation: waveHome 10s infinite linear;
+    background-size: 400% 400%;
+    will-change: background-position;
+}
+
+@keyframes waveHome {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#home .content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+
+/* Contact Info Section */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Reduced gap between cards */
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Adjusted gap between icon and text */
+    font-size: 0.9rem; /* Smaller font size */
+    color: white;
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    backdrop-filter: blur(8px); /* Glassmorphism effect */
+    padding: 10px 16px; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 240px; /* Smaller width */
+    height: 50px; /* Smaller height */
+    text-align: center;
+}
+
+.contact-item i {
+    font-size: 1.2rem; /* Smaller icon size */
+    color: white; /* White icons */
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem; /* Adjusted font size */
+    transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.25); /* Slightly lighter on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.contact-item a:hover {
+    color: #ffffff; /* Ensure text stays white */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+        gap: 15px; /* Smaller gap for mobile view */
+    }
+
+    .contact-item {
+        width: 100%; /* Full width for smaller screens */
+        height: auto;
+    }
+}
+
+
+
+/* Social Media Icons as Buttons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 30px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Hover color change based on social media */
+.social-icons a[href*="linkedin.com"]:hover {
+    background: #0077b5; /* LinkedIn blue */
+}
+
+.social-icons a[href*="t.me"]:hover {
+    background: #0088cc; /* Telegram blue */
+}
+
+.social-icons a[href*="instagram.com"]:hover {
+    background: #e1306c; /* Instagram pink */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .social-icons {
+        gap: 15px;
+    }
+
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+
+
+/* Section 2 (About) */
+/* General styling for the About section */
+#about {
+    padding: 60px 20px; /* Adequate padding for spacing */
+    background: linear-gradient(135deg, #FF6F91, #4C9EEB); /* Gradient background */
+    color: #fff; /* White text color for readability */
+}
+
+#about .container {
+    max-width: 900px; /* Max width for better readability */
+    margin: 0 auto; /* Centering the content */
+    padding: 30px; /* Inner padding */
+    background: rgba(255, 255, 255, 0.1); /* Slight transparent background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    backdrop-filter: blur(15px); /* Glassmorphism effect */
+}
+
+/* Main heading */
+#about h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center; /* Centering the heading */
+    color: #FFD700; /* Gold color for the heading for high contrast */
+    text-transform: uppercase; /* Capitalize the heading */
+    letter-spacing: 3px; /* Slight spacing between letters */
+}
+
+/* Paragraph text */
+#about p {
+    font-size: 1.3rem;
+    line-height: 1.7; /* Improved line height for readability */
+    margin-bottom: 20px;
+    color: #eeeeee; /* Light gray for paragraphs */
+}
+
+/* Strong or highlighted text */
+#about p strong {
+    color: #FF4500; /* Orange-red for emphasized text */
+    font-weight: bold;
+}
+
+/* Hover effect for links */
+#about a {
+    color: #1E90FF; /* Blue color for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#about a:hover {
+    color: #FFFFFF; /* Change to white on hover */
+    transform: translateX(5px); /* Slight movement on hover */
+}
+
+/* Lists or bullet points */
+#about ul {
+    margin: 25px 0;
+    padding-left: 40px; /* Indentation for the list */
+    list-style: disc; /* Default bullet points */
+}
+
+#about li {
+    margin: 12px 0;
+    line-height: 1.7;
+    color: #dddddd; /* Light gray for list items */
+}
+
+/* For better display on mobile */
+@media (max-width: 768px) {
+    #about .container {
+        padding: 20px; /* Less padding on mobile */
+    }
+
+    #about h2 {
+        font-size: 2.5rem; /* Smaller heading size for mobile */
+    }
+
+    #about p {
+        font-size: 1.1rem; /* Slightly smaller paragraph text */
+    }
+
+    #about ul {
+        padding-left: 20px; /* Reduced padding for mobile */
+    }
+}
+
+
+
+/* Section 3 (Skills) */
+#skills {
+    background: linear-gradient(135deg, #81C784, #FFC107); /* Mint Green to Yellow gradient */
+    animation: waveSkills 10s infinite linear;
+    background-size: 400% 400%;
+    will-change: background-position;
+}
+
+@keyframes waveSkills {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#skills .content h2 {
+    font-size: 2.5rem;
+}
+
+/* Section 4 (Work Experience) */
+#experience {
+    background: linear-gradient(135deg, #2C3E50, #81C784); /* Dark Blue to Mint Green gradient */
+    animation: waveExperience 10s infinite linear;
+    background-size: 400% 400%;
+    will-change: background-position;
+}
+
+@keyframes waveExperience {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#experience .content h2 {
+    font-size: 2.5rem;
+}
+
+/* Section 5 (Projects) */
+#projects {
+    background: linear-gradient(135deg, #FFC107, #FF6F91); /* Yellow to Pink gradient */
+    animation: waveProjects 10s infinite linear;
+    background-size: 400% 400%;
+    will-change: background-position;
+}
+
+@keyframes waveProjects {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#projects .content h2 {
+    font-size: 2.5rem;
+}
+
+/* Section 6 (Contact) */
+#contact {
+    background: linear-gradient(135deg, #2C3E50, #4C9EEB); /* Dark Blue to Light Blue gradient */
+    animation: waveContact 10s infinite linear;
+    background-size: 400% 400%;
+    will-change: background-position;
+}
+
+@keyframes waveContact {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#contact .content h2 {
+    font-size: 2.5rem;
+}
+
+/* Content Styling */
+.content {
+    z-index: 2;
+}
+
+.content p {
+    font-size: 1.2rem;
+}
+
+.content ul {
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.content li {
+    margin: 10px 0;
+}
+
+/* Overlay for better contrast */
+.fullpage-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Navbar Styles with Centered Background, Rounded Corners and Sticky Top */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Center the navbar */
+    width: 70%; /* Adjust the width of the navbar */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    color: white;
+    padding: 15px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Glass effect */
+    border-radius: 15px; /* Rounded corners */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    margin-top: 15px; /* Add space from top */
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 20px;
+    font-size: 1.2rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #FF6F91; /* Soft pink color on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Navbar Icon Styling (if you want to add icons next to text) */
+.navbar .icon {
+    margin-right: 8px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+}
+
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+}
+
+/* Smooth Scroll Enhancements */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow: hidden;
+}
