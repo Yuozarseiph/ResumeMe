@@ -5,7 +5,7 @@ const totalSections = sections.length;
 
 window.addEventListener('wheel', handleScroll);
 
-function handleScroll(event) {
+function handleScroll(event)  {
     if (event.deltaY > 0) {
         // Scroll down
         goToNextSection();
