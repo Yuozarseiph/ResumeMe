@@ -348,12 +348,15 @@ html {
 }
 
 .skill-card p {
-    font-size: 1rem;
-    color: #fff; /* White text for description */
+    display: none;
 }
 
 /* Media Query for smaller screens */
 @media (max-width: 768px) {
+    #skills{
+        padding: 0;
+    }
+    
     #skills .content h2 {
         font-size: 2.5rem; /* Slightly smaller title for mobile */
     }
@@ -368,6 +371,19 @@ html {
 
     .skill-card p {
         font-size: 0.9rem; /* Smaller text on mobile */
+    }
+    #skills .content{
+        width: 90%;
+    }
+    .skills-container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(40% ,1fr)
+        ); /* Responsive grid */
+        gap: 10px;
+        justify-items: center;
     }
 }
 
