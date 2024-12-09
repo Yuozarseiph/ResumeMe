@@ -1,33 +1,33 @@
-// JavaScript to handle fullpage scroll behavior
-let currentSection = 0;
-const sections = document.querySelectorAll('.fullpage-section');
-const totalSections = sections.length;
+let isScrolling = false;
 
-window.addEventListener('wheel', handleScroll);
+window.addEventListener('wheel', function(e) {
+    if (isScrolling) return; // جلوگیری از اسکرول دوگانه
 
-function handleScroll(event)  {
-    if (event.deltaY > 0) {
-        // Scroll down
-        goToNextSection();
+    isScrolling = true;
+
+    // تعیین فاصله اسکرول (باید طبق نیاز خود تنظیم کنید)
+    const scrollAmount = window.innerHeight; // هر بار به اندازه یک صفحه اسکرول می‌کند
+
+    // اگر اسکرول به پایین است
+    if (e.deltaY > 0) {
+        window.scrollBy({
+            top: scrollAmount,
+            behavior: 'smooth',
+        });
     } else {
-        // Scroll up
-        goToPreviousSection();
+        // اگر اسکرول به بالا است
+        window.scrollBy({
+            top: -scrollAmount,
+            behavior: 'smooth',
+        });
     }
-}
 
-function goToNextSection() {
-    if (currentSection < totalSections - 1) {
-        currentSection++;
-        scrollToSection(currentSection);
-    }
-}
+    // تنظیم timeout برای عدم تداخل اسکرولها
+    setTimeout(function() {
+        isScrolling = false;
+    }, 1000); // بعد از 1 ثانیه اجازه اسکرول مجدد را می‌دهیم
+});
 
-function goToPreviousSection() {
-    if (currentSection > 0) {
-        currentSection--;
-        scrollToSection(currentSection);
-    }
-}
 
 // Listen for the form submission event
 document.getElementById("contact-form").addEventListener("submit", function (event) {
