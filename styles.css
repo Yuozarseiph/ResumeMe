@@ -189,72 +189,73 @@ body, html {
 
 
 /* Section 2 (About) */
-/* General styling for the About section */
-#about {
-    padding: 60px 20px; /* Adequate padding for spacing */
-    background: linear-gradient(135deg, #FF6F91, #4C9EEB); /* Gradient background */
-    color: #fff; /* White text color for readability */
+/* About Section Styling */
+#about .container {
+    max-width: 800px; /* Limiting the width of the content for better readability */
+    margin: 0 auto; /* Centering the content */
+    text-align: left; /* Left-aligning the text */
+    padding: 40px; /* More padding for better spacing */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    color: #ffffff; /* White text color */
+    transition: transform 0.3s ease-in-out;
 }
 
-#about .container {
-    max-width: 900px; /* Max width for better readability */
-    margin: 0 auto; /* Centering the content */
-    padding: 30px; /* Inner padding */
-    background: rgba(255, 255, 255, 0.1); /* Slight transparent background */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    backdrop-filter: blur(15px); /* Glassmorphism effect */
+#about .container:hover {
+    transform: translateY(-10px); /* Subtle lift effect on hover */
 }
 
 /* Main heading */
 #about h2 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: center; /* Centering the heading */
-    color: #FFD700; /* Gold color for the heading for high contrast */
-    text-transform: uppercase; /* Capitalize the heading */
-    letter-spacing: 3px; /* Slight spacing between letters */
+    color: #FFD700; /* Gold color for the heading */
+    text-transform: uppercase; /* Making the heading all caps */
+    letter-spacing: 2px; /* Slight spacing for style */
 }
 
 /* Paragraph text */
 #about p {
-    font-size: 1.3rem;
-    line-height: 1.7; /* Improved line height for readability */
+    font-size: 1.2rem;
+    line-height: 1.8; /* Line height for better readability */
     margin-bottom: 20px;
-    color: #eeeeee; /* Light gray for paragraphs */
+    color: #ffffff; /* White text color for paragraphs */
 }
 
-/* Strong or highlighted text */
+/* Important or highlighted text */
 #about p strong {
-    color: #FF4500; /* Orange-red for emphasized text */
+    color: #FF6F91; /* Highlight color for important text */
     font-weight: bold;
 }
 
 /* Hover effect for links */
 #about a {
-    color: #1E90FF; /* Blue color for links */
+    color: #4C9EEB; /* Light blue color for links */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 #about a:hover {
-    color: #FFFFFF; /* Change to white on hover */
-    transform: translateX(5px); /* Slight movement on hover */
+    color: #FF6F91; /* Change to pink on hover */
+    transform: translateX(5px); /* Slight movement effect */
 }
 
 /* Lists or bullet points */
 #about ul {
-    margin: 25px 0;
-    padding-left: 40px; /* Indentation for the list */
+    margin: 20px 0;
+    padding-left: 40px; /* Padding for the list */
     list-style: disc; /* Default bullet points */
 }
 
 #about li {
-    margin: 12px 0;
-    line-height: 1.7;
-    color: #dddddd; /* Light gray for list items */
+    margin: 10px 0;
+    line-height: 1.8;
+    color: #ffffff; /* White color for list items */
 }
 
 /* For better display on mobile */
@@ -264,28 +265,30 @@ body, html {
     }
 
     #about h2 {
-        font-size: 2.5rem; /* Smaller heading size for mobile */
+        font-size: 2.2rem; /* Slightly smaller heading on mobile */
     }
 
     #about p {
-        font-size: 1.1rem; /* Slightly smaller paragraph text */
+        font-size: 1rem; /* Smaller font size for paragraph */
     }
 
     #about ul {
-        padding-left: 20px; /* Reduced padding for mobile */
+        padding-left: 20px; /* Adjusting padding for mobile */
     }
 }
 
 
-
 /* Section 3 (Skills) */
+/* Skills Section */
 #skills {
-    background: linear-gradient(135deg, #81C784, #FFC107); /* Mint Green to Yellow gradient */
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(150, 50, 50, 0.8)); /* Dark red gradient */
+    padding: 60px 20px;
     animation: waveSkills 10s infinite linear;
     background-size: 400% 400%;
     will-change: background-position;
 }
 
+/* Keyframes for background animation */
 @keyframes waveSkills {
     0% {
         background-position: 0% 0%;
@@ -299,15 +302,87 @@ body, html {
 }
 
 #skills .content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #fff; /* White text for the title */
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    justify-items: center;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.2); /* Transparent white for the "glass" effect */
+    backdrop-filter: blur(10px); /* Creates the frosted glass effect */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.skill-card i {
+    font-size: 3rem;
+    color: #ff5252; /* Red accent color for the icons */
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-size: 1.5rem;
+    color: #fff; /* White text for the skill title */
+    margin-bottom: 15px;
+}
+
+.skill-card p {
+    font-size: 1rem;
+    color: #fff; /* White text for description */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    #skills .content h2 {
+        font-size: 2.5rem; /* Slightly smaller title for mobile */
+    }
+
+    .skill-card i {
+        font-size: 2.5rem; /* Smaller icons on mobile */
+    }
+
+    .skill-card h3 {
+        font-size: 1.2rem; /* Smaller skill titles on mobile */
+    }
+
+    .skill-card p {
+        font-size: 0.9rem; /* Smaller text on mobile */
+    }
+}
+
+
+#skills .content h2 {
     font-size: 2.5rem;
 }
 
 /* Section 4 (Work Experience) */
+/* Experience Section */
 #experience {
     background: linear-gradient(135deg, #2C3E50, #81C784); /* Dark Blue to Mint Green gradient */
-    animation: waveExperience 10s infinite linear;
+    animation: waveExperience 10s infinite linear; /* Adding wave animation for smooth background effect */
     background-size: 400% 400%;
     will-change: background-position;
+    padding: 50px 20px;
+    color: #fff; /* Text color is white for contrast */
+    position: relative;
 }
 
 @keyframes waveExperience {
@@ -322,9 +397,73 @@ body, html {
     }
 }
 
-#experience .content h2 {
-    font-size: 2.5rem;
+/* Content inside Experience */
+#experience .content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1; /* Ensure content is above the animated background */
 }
+
+/* Title of Experience */
+#experience h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff; /* White color for the heading */
+    font-weight: bold;
+}
+
+/* Experience List Styles */
+#experience ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#experience li {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #fff; /* Text color for each list item */
+}
+
+#experience li:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+/* Experience Job Title Styling */
+#experience li strong {
+    font-size: 1.1rem;
+    color: #F39C12; /* Yellow color for job title and company name */
+}
+
+/* Paragraph text styling */
+#experience li p {
+    font-size: 1rem;
+    color: #ecf0f1; /* Lighter color for description text */
+    margin-top: 8px;
+    line-height: 1.6;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    #experience {
+        padding: 30px 15px; /* Adjust padding for smaller screens */
+    }
+
+    #experience h2 {
+        font-size: 1.6rem; /* Smaller font size for heading on mobile */
+    }
+
+    #experience li {
+        padding: 15px; /* Adjust padding for list items on mobile */
+    }
+}
+
 
 /* Section 5 (Projects) */
 #projects {
@@ -351,11 +490,14 @@ body, html {
 }
 
 /* Section 6 (Contact) */
+/* Contact Section */
 #contact {
-    background: linear-gradient(135deg, #2C3E50, #4C9EEB); /* Dark Blue to Light Blue gradient */
+    background: linear-gradient(135deg, #1F3B4D, #6DD5FA); /* Gradient background */
     animation: waveContact 10s infinite linear;
     background-size: 400% 400%;
-    will-change: background-position;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
 }
 
 @keyframes waveContact {
@@ -370,9 +512,82 @@ body, html {
     }
 }
 
-#contact .content h2 {
-    font-size: 2.5rem;
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
+
+.contact-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-container p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#contact-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #333;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border: 2px solid #6DD5FA;
+    box-shadow: 0 0 5px rgba(109, 213, 250, 0.8);
+}
+
+#contact-form textarea {
+    resize: none;
+}
+
+.submit-button {
+    background: linear-gradient(135deg, #6DD5FA, #1F3B4D);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #1F3B4D, #6DD5FA);
+    transform: scale(1.05);
+}
+
+.submit-button:active {
+    transform: scale(0.95);
+}
+
 
 /* Content Styling */
 .content {
@@ -391,47 +606,37 @@ body, html {
 .content li {
     margin: 10px 0;
 }
-
-/* Overlay for better contrast */
-.fullpage-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
-    z-index: 1;
-}
-
-/* Navbar Styles with Centered Background, Rounded Corners and Sticky Top */
+/* Navbar Styles */
 .navbar {
     position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%); /* Center the navbar */
-    width: 70%; /* Adjust the width of the navbar */
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    width: 100%; /* Ensure the navbar never exceeds the width */
+    max-width: 100%; /* Ensure navbar doesn't exceed screen width */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
     color: white;
     padding: 15px 0;
     z-index: 1000;
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Space between logo and menu */
     align-items: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px); /* Glass effect */
     border-radius: 15px; /* Rounded corners */
     border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
-    margin-top: 15px; /* Add space from top */
+    margin-top: 15px;
 }
 
-.navbar ul {
+/* Navbar Menu */
+.navbar-menu {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between; /* Space items evenly */
+    align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 .navbar li {
@@ -450,37 +655,117 @@ body, html {
     transform: scale(1.1); /* Slight zoom effect */
 }
 
-/* Navbar Icon Styling (if you want to add icons next to text) */
+/* Navbar Icon Styling */
 .navbar .icon {
     margin-right: 8px;
 }
 
-/* Media Query for smaller screens */
+/* Hamburger Menu */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle .bar {
+    width: 30px;
+    height: 4px;
+    margin: 6px 0;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Media Queries */
+
+/* For larger screens (Desktop) */
+@media (min-width: 1024px) {
+    .navbar {
+        width: 90%; /* Ensures the navbar is not too wide, reduces space */
+        max-width: 1200px; /* Prevents navbar from exceeding max width */
+        padding: 15px 30px; /* Adds padding for larger screens */
+    }
+
+    .navbar-menu {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%; /* Ensures no overflow */
+    }
+
+    .navbar li {
+        margin: 0 25px;
+        font-size: 1.4rem; /* Increases font size slightly */
+    }
+
+    .navbar-toggle {
+        display: none; /* Hide hamburger icon for large screens */
+    }
+}
+
+/* For medium screens (Tablet) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .navbar {
+        width: 80%; /* Ensures the navbar fits within smaller screens */
+    }
+
+    .navbar-menu {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .navbar li {
+        margin: 0 15px;
+        font-size: 1.2rem; /* Adjust font size for tablets */
+    }
+
+    /* Remove icons on tablet */
+    .navbar .icon {
+        display: none;
+    }
+}
+
+/* For small screens (Mobile) */
 @media (max-width: 768px) {
-    .navbar ul {
+    .navbar {
+        width: 90%; /* Adjust navbar width */
+    }
+
+    .navbar-menu {
+        display: none; /* Hide menu by default */
         flex-direction: column;
-        width: 90%;
+        width: 100%;
+        text-align: center;
     }
 
     .navbar li {
         margin: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    /* Show hamburger menu */
+    .navbar-toggle {
+        display: flex;
+    }
+
+    /* Show the menu when it's active */
+    .navbar-menu.active {
+        display: flex;
+        animation: slideIn 0.3s ease-in-out; /* Animation for opening */
     }
 }
 
-
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
-        width: 90%;
+/* Slide-in animation for mobile menu */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
     }
-
-    .navbar li {
-        margin: 10px 0;
+    to {
+        transform: translateY(0);
     }
 }
-
-/* Smooth Scroll Enhancements  */
+/* Smooth Scroll Enhancements */
 html {
     scroll-behavior: smooth;
 }
